@@ -16,40 +16,16 @@ public class Zadatak2 {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-		boolean hasState;
-		boolean hasCity;
 
 		Select dropdown = new Select(driver.findElement(By.id("countryId")));
 		dropdown.selectByVisibleText("Algeria");
 
-		try {
-			Select dropdown1 = new Select(driver.findElement(By.id("stateId")));
-			dropdown.selectByVisibleText("AK");
-			hasState = true;
-		} catch (Exception e) {
-			hasState = false;
-		}
-		if (hasState) {
-			 Select dropdown1 = new Select(driver.findElement(By.id("stateId")));
-			System.out.println("Country has a state.");
-		} else {
-			System.out.println("Country don't have a state.");
-		}
+		Select dropdown1 = new Select(driver.findElement(By.id("stateId")));
+		dropdown1.selectByVisibleText("Biskra");
 
-		try {
-			Select dropdown2 = new Select(driver.findElement(By.id("cityId")));
-			dropdown.selectByVisibleText("Fairbanks");
-			hasCity = true;
-		} catch (Exception e) {
-			hasCity = false;
-		}
+		Select dropdown2 = new Select(driver.findElement(By.id("cityId")));
+		dropdown2.selectByVisibleText("Tolga");
 
-		if (hasCity) {
-			Select dropdown1 = new Select(driver.findElement(By.id("stateId")));
-			System.out.println("Country has a city.");
-		} else {
-			System.out.println("Country don't have a city.");
-		}
 	}
 
 }
