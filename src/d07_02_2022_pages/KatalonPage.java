@@ -1,5 +1,7 @@
 package d07_02_2022_pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,8 +33,9 @@ public class KatalonPage {
 	}
 
 	public boolean emptyCart() {
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		try {
-			wait.until(ExpectedConditions.visibilityOf((WebElement) By.className("cart-empty")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.className("cart-empty")));
 			return true;
 		} catch (Exception e) {
 			return false;
