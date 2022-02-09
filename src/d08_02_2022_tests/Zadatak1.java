@@ -1,5 +1,4 @@
 package d08_02_2022_tests;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,7 +15,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import d08_02_2022_pages.FormPage;
-import p08_02_2022_pages.LoginPage;
 
 public class Zadatak1 {
 
